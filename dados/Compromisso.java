@@ -19,4 +19,9 @@ public class Compromisso
     {
         return dataHora.toLocalDate();
     }
+
+    public String getAssunto()
+    {
+        return assunto;
+    }
 }
