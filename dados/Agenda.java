@@ -4,7 +4,7 @@ import java.time.*;
 import java.util.*;
 import java.util.stream.*;
 import java.util.function.Predicate;
-
+import java.time.temporal.ChronoUnit;
 import compromissos.dados.Compromisso;
 
 public class Agenda
@@ -39,26 +39,28 @@ public class Agenda
         return Collections.unmodifiableCollection(compromissos);
     }
 
-    public Collection<Compromisso> listaPorAssunto(String assunto)
+    public Collection<Compromisso> listarPorAssunto(String assunto)
     {
-        return filtra(c -> c.getAssunto() == assunto);
+        return filtra(c -> c.getAssunto().equals(assunto));
     }
 
-    public Collection<Compromisso> listaHoje()
+    public Collection<Compromisso> listarHoje()
     {
         return filtra(c -> LocalDate.now().equals(c.getData()));
     }
 
-    public Collection<Compromisso> listaPeriodo(LocalDate inicio, LocalDate fim)
+    public Collection<Compromisso> listarPorPeriodo(LocalDate inicio, LocalDate fim)
     {
         return filtra(c -> c.getData().isAfter(inicio) && c.getData().isBefore(fim));
     }
 
-    public Collection<Compromisso> listaProximos(int numeroDeDias)
+    public Collection<Compromisso> listarProximos(int numeroDeDias)
     {
         LocalDate hoje = LocalDate.now();
 
-        return filtra(c -> Period.between(hoje, c.getData()).getDays() <= numeroDeDias);
+        return filtra(
+            c -> Period.between(hoje, c.getData()).get(ChronoUnit.DAYS) <= numeroDeDias
+        );
     }
 
     protected Collection<Compromisso> filtra(Predicate<Compromisso> filtro)
