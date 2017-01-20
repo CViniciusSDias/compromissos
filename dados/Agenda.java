@@ -1,10 +1,9 @@
 package compromissos.dados;
 
-import java.time.LocalDate;
-import java.time.Period;
+import java.time.*;
 import java.util.*;
+import java.util.stream.*;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 import compromissos.dados.Compromisso;
 
