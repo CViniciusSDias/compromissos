@@ -30,10 +30,16 @@ public class App
                     case 4:
                         ui.listarPorAssunto();
                         break;
+                    case 5:
+                        ui.listarPorPeriodo();
+                        break;
+                    case 6:
+                        ui.listarProximos();
+                        break;
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Por favor, digite um numero entre 1 e 7.");
             }
-        } while (opcao > 0 && opcao < 8);
+        } while (opcao > 0 && opcao < 7);
     }
 }

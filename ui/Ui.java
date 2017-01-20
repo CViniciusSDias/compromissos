@@ -8,6 +8,7 @@ public interface Ui
     void inserir();
     void listarPorAssunto();
     void listarPorPeriodo();
+    void listarProximos();
     void remover();
     /**
      * Deve exibir um menu e retornar uma das seguintes opções:
@@ -17,8 +18,7 @@ public interface Ui
      * 4 - Listar Compromissos por Assunto
      * 5 - Listar Compromissos de Periodo
      * 6 - Listar Proximos Compromissos
-     * 7 - Listar Compromissos de Periodo
-     * 8 - Sair
+     * 7 - Sair
      *
      * @return int
      */
