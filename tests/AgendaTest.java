@@ -1,7 +1,6 @@
 package tests;
 
-import compromissos.dados.Agenda;
-import compromissos.dados.Compromisso;
+import compromissos.dados.*;
 import org.junit.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,10 +14,10 @@ public class AgendaTest
     {
         a = new Agenda();
 
-        a.inserir(new Compromisso(1, "", "Descrição", LocalDateTime.now(), "Consulta"));
-        a.inserir(new Compromisso(2, "", "Descrição", LocalDateTime.of(2017, 2, 28, 11, 0), "Teste"));
-        a.inserir(new Compromisso(3, "", "Descrição", LocalDateTime.of(2017, 1, 30, 12, 30), "Outro"));
-        a.inserir(new Compromisso(4, "", "Descrição", LocalDateTime.now(), "Consulta"));
+        a.inserir(new Compromisso("", "Descrição", "20/01/2017 15:30", "Consulta"));
+        a.inserir(new Compromisso("", "Descrição", "28/02/2017 11:00", "Teste"));
+        a.inserir(new Compromisso("", "Descrição", "30/01/2017 12:30", "Outro"));
+        a.inserir(new Compromisso("", "Descrição", "20/01/2017 15:30", "Consulta"));
     }
 
     @Test

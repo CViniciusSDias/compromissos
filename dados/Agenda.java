@@ -10,6 +10,7 @@ import compromissos.dados.Compromisso;
 public class Agenda
 {
     private Collection<Compromisso> compromissos;
+    private int autoIncrement = 1;
 
     public Agenda()
     {
@@ -18,6 +19,7 @@ public class Agenda
 
     public void inserir(Compromisso c)
     {
+        c.setId(autoIncrement++);
         compromissos.add(c);
     }
 

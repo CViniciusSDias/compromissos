@@ -1,6 +1,7 @@
 package compromissos.dados;
 
 import java.time.*;
+import java.time.format.*;
 
 public class Compromisso
 {
@@ -10,18 +11,27 @@ public class Compromisso
     private LocalDateTime dataHora;
     private String assunto;
 
-    public Compromisso(int id, String titulo, String descricao, LocalDateTime dataHora, String assunto)
+    public Compromisso(String titulo, String descricao, String dataHora, String assunto)
     {
-        this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
-        this.dataHora = dataHora;
+        setDataHora(dataHora);
         this.assunto = assunto;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
     }
 
     public int getId()
     {
         return id;
+    }
+
+    public void setDataHora(String dataHora)
+    {
+        this.dataHora = LocalDateTime.parse(dataHora, DateTimeFormatter.ofPattern("dd/MM/yyyy H:m"));
     }
 
     public LocalDate getData()
@@ -32,5 +42,22 @@ public class Compromisso
     public String getAssunto()
     {
         return assunto;
+    }
+
+    public String getTitulo()
+    {
+        return titulo;
+    }
+
+    public String getDescricao()
+    {
+        return descricao;
+    }
+
+    public String getDataHoraFormatada()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy Hhm");
+
+        return dataHora.format(formatter);
     }
 }
