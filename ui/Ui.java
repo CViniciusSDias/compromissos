@@ -4,10 +4,11 @@ import compromissos.dados.*;
 
 public interface Ui
 {
-    void listar(Agenda a);
-    void inserir(Agenda a);
-    void listarPorAssunto(Agenda a);
-    void remover(Agenda a);
+    void listar();
+    void inserir();
+    void listarPorAssunto();
+    void listarPorPeriodo();
+    void remover();
     /**
      * Deve exibir um menu e retornar uma das seguintes opções:
      * 1 - Inserir Compromisso

@@ -3,17 +3,25 @@ package compromissos.ui;
 import compromissos.dados.*;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Cmd implements Ui
 {
-    public void listar(Agenda agenda)
+    private Agenda agenda;
+
+    public Cmd(Agenda a)
+    {
+        agenda = a;
+    }
+    public void listar()
     {
         titulo();
         compromissos(agenda.listarTodos());
     }
 
-    public void listarPorAssunto(Agenda agenda)
+    public void listarPorAssunto()
     {
         limpar();
         System.out.println("Digite o assunto a buscar:");
@@ -22,7 +30,24 @@ public class Cmd implements Ui
         compromissos(agenda.listarPorAssunto(assunto));
     }
 
-    public void inserir(Agenda a)
+    public void listarPorPeriodo()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        Scanner sc = new Scanner(System.in);
+
+        limpar();
+        System.out.println("Digite o inicio do periodo (dd/mm/aaaa):");
+        LocalDate inicio = LocalDate.parse(sc.nextLine(), formatter);
+
+        System.out.println("\nDigite o fim do periodo (dd/mm/aaaa):");
+        LocalDate fim = LocalDate.parse(sc.nextLine(), formatter);
+        titulo();
+
+
+        compromissos(agenda.listarPorPeriodo(inicio, fim));
+    }
+
+    public void inserir()
     {
         limpar();
         Scanner sc = new Scanner(System.in);
@@ -40,15 +65,15 @@ public class Cmd implements Ui
         String assunto = sc.nextLine();
 
         Compromisso c = new Compromisso(titulo, desc, dataHora, assunto);
-        a.inserir(c);
+        agenda.inserir(c);
     }
 
-    public void remover(Agenda a)
+    public void remover()
     {
         limpar();
         System.out.println("Digite o ID do compromisso a remover:");
         int id = new Scanner(System.in).nextInt();
-        a.remover(id);
+        agenda.remover(id);
     }
 
     public int menu()

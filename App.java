@@ -10,8 +10,8 @@ public class App
     public static void main(String[] s)
     {
         int opcao = 1;
-        Ui ui = new Cmd();
         Agenda a = new Agenda();
+        Ui ui = new Cmd(a);
 
         do {
             try {
@@ -19,16 +19,16 @@ public class App
 
                 switch (opcao) {
                     case 1:
-                        ui.inserir(a);
+                        ui.inserir();
                         break;
                     case 2:
-                        ui.remover(a);
+                        ui.remover();
                         break;
                     case 3:
-                        ui.listar(a);
+                        ui.listar();
                         break;
                     case 4:
-                        ui.listarPorAssunto(a);
+                        ui.listarPorAssunto();
                         break;
                 }
             } catch (InputMismatchException e) {
