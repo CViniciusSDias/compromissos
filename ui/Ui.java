@@ -1,7 +1,5 @@
 package compromissos.ui;
 
-import compromissos.dados.*;
-
 public interface Ui
 {
     void listar();
