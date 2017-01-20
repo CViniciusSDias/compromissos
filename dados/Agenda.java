@@ -61,10 +61,10 @@ public class Agenda
         return filtra(c -> Period.between(hoje, c.getData()).getDays() <= numeroDeDias);
     }
 
-    protected Collection<Compromisso> filtra(Predicate<Compromisso> p)
+    protected Collection<Compromisso> filtra(Predicate<Compromisso> filtro)
     {
         return compromissos.stream()
-            .filter(p)
+            .filter(filtro)
             .collect(Collectors.toList());
     }
 }
