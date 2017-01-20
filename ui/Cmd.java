@@ -57,6 +57,12 @@ public class Cmd implements Ui
         compromissos(agenda.listarProximos(dias));
     }
 
+    public void listarDeHoje()
+    {
+        titulo();
+        compromissos(agenda.listarHoje());
+    }
+
     public void inserir()
     {
         limpar();
@@ -94,8 +100,9 @@ public class Cmd implements Ui
         System.out.println("3 - Listar Todos os Compromissos");
         System.out.println("4 - Listar Compromissos por Assunto");
         System.out.println("5 - Listar Compromissos de Periodo");
-        System.out.println("6 - Listar Proximos Compromissos");
-        System.out.println("7 - Sair");
+        System.out.println("6 - Listar Compromissos de Hoje");
+        System.out.println("7 - Listar Proximos Compromissos");
+        System.out.println("8 - Sair");
 
         return new Scanner(System.in).nextInt();
     }

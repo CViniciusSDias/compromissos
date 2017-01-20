@@ -9,6 +9,7 @@ public interface Ui
     void listarPorAssunto();
     void listarPorPeriodo();
     void listarProximos();
+    void listarDeHoje();
     void remover();
     /**
      * Deve exibir um menu e retornar uma das seguintes opções:

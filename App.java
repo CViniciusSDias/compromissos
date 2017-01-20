@@ -34,12 +34,15 @@ public class App
                         ui.listarPorPeriodo();
                         break;
                     case 6:
+                        ui.listarDeHoje();
+                        break;
+                    case 7:
                         ui.listarProximos();
                         break;
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Por favor, digite um numero entre 1 e 7.");
+                System.out.println("Por favor, digite um numero entre 1 e 8.");
             }
-        } while (opcao > 0 && opcao < 7);
+        } while (opcao > 0 && opcao < 8);
     }
 }
