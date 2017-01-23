@@ -93,17 +93,36 @@ public class Cmd implements Ui
 
     public int menu()
     {
-        limpar();
-        System.out.println("1 - Inserir Compromisso");
-        System.out.println("2 - Remover Compromisso");
-        System.out.println("3 - Listar Todos os Compromissos");
-        System.out.println("4 - Listar Compromissos por Assunto");
-        System.out.println("5 - Listar Compromissos de Periodo");
-        System.out.println("6 - Listar Compromissos de Hoje");
-        System.out.println("7 - Listar Proximos Compromissos");
-        System.out.println("8 - Sair");
+        try {
+            limpar();
+            System.out.println("1 - Inserir Compromisso");
+            System.out.println("2 - Remover Compromisso");
+            System.out.println("3 - Listar Todos os Compromissos");
+            System.out.println("4 - Listar Compromissos por Assunto");
+            System.out.println("5 - Listar Compromissos de Periodo");
+            System.out.println("6 - Listar Compromissos de Hoje");
+            System.out.println("7 - Listar Proximos Compromissos");
+            System.out.println("8 - Sair");
 
-        return new Scanner(System.in).nextInt();
+            int op = new Scanner(System.in).nextInt();
+
+            if (op < 1 || op > 8) {
+                throw new InputMismatchException();
+            }
+
+            return op;
+        } catch (InputMismatchException e) {
+            System.out.println("Por favor, digite um numero entre 1 e 8.");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {}
+
+            return menu();
+        } catch (StackOverflowError erro) {
+            System.out.println("Voce excedeu o limite de erros.");
+            // Sai do programa
+            return 0;
+        }
     }
 
     protected void limpar()

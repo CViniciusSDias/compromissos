@@ -14,34 +14,30 @@ public class App
         Ui ui = new Swing(a);
 
         do {
-            try {
-                opcao = ui.menu();
+            opcao = ui.menu();
 
-                switch (opcao) {
-                    case 1:
-                        ui.inserir();
-                        break;
-                    case 2:
-                        ui.remover();
-                        break;
-                    case 3:
-                        ui.listar();
-                        break;
-                    case 4:
-                        ui.listarPorAssunto();
-                        break;
-                    case 5:
-                        ui.listarPorPeriodo();
-                        break;
-                    case 6:
-                        ui.listarDeHoje();
-                        break;
-                    case 7:
-                        ui.listarProximos();
-                        break;
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Por favor, digite um numero entre 1 e 8.");
+            switch (opcao) {
+                case 1:
+                    ui.inserir();
+                    break;
+                case 2:
+                    ui.remover();
+                    break;
+                case 3:
+                    ui.listar();
+                    break;
+                case 4:
+                    ui.listarPorAssunto();
+                    break;
+                case 5:
+                    ui.listarPorPeriodo();
+                    break;
+                case 6:
+                    ui.listarDeHoje();
+                    break;
+                case 7:
+                    ui.listarProximos();
+                    break;
             }
         } while (opcao > 0 && opcao < 8);
 
