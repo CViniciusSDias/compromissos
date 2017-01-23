@@ -59,9 +59,10 @@ public class Agenda
     public Collection<Compromisso> listarProximos(int numeroDeDias)
     {
         LocalDate hoje = LocalDate.now();
+        LocalDate proxima = hoje.plusDays(numeroDeDias);
 
         return filtra(
-            c -> Period.between(hoje, c.getData()).get(ChronoUnit.DAYS) <= numeroDeDias
+            c -> c.getData().isAfter(hoje) && c.getData().isBefore(proxima)
         );
     }
 

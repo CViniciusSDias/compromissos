@@ -11,7 +11,7 @@ public class App
     {
         int opcao = 1;
         Agenda a = new Agenda();
-        Ui ui = new Cmd(a);
+        Ui ui = new Swing(a);
 
         do {
             try {
@@ -44,5 +44,7 @@ public class App
                 System.out.println("Por favor, digite um numero entre 1 e 8.");
             }
         } while (opcao > 0 && opcao < 8);
+
+        System.exit(0);
     }
 }

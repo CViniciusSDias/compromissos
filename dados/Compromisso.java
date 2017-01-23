@@ -56,7 +56,7 @@ public class Compromisso
 
     public String getDataHoraFormatada()
     {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy Hhm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy H:m");
 
         return dataHora.format(formatter);
     }

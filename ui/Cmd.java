@@ -1,7 +1,6 @@
 package compromissos.ui;
 
 import compromissos.dados.*;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
