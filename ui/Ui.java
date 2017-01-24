@@ -10,7 +10,7 @@ public interface Ui
     void listarDeHoje();
     void remover();
     /**
-     * Deve exibir um menu e retornar uma das seguintes opções:
+     * Deve exibir um menu e retornar uma das seguintes opÃ§Ãµes:
      * 1 - Inserir Compromisso
      * 2 - Remover Compromisso
      * 3 - Listar Todos os Compromissos

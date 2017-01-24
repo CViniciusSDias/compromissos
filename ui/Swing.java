@@ -71,8 +71,8 @@ public class Swing implements ActionListener, Ui
         layout.setVgap(10);
         form.setLayout(layout);
 
-        JTextField titulo = criarCampo("TÌtulo", form);
-        JTextField descricao = criarCampo("DescriÁ„o", form);
+        JTextField titulo = criarCampo("T√≠tulo", form);
+        JTextField descricao = criarCampo("Descri√ß√£o", form);
         JTextField dataHora = criarCampo("Data/Hora (dd/mm/aaaa hh:mm)", form);
         JTextField assunto = criarCampo("Assunto", form);
 
@@ -110,7 +110,7 @@ public class Swing implements ActionListener, Ui
     public void listarPorPeriodo()
     {
         boolean erro;
-        // Inicializa as vari·veis para passar pelo compilador.
+        // Inicializa as vari√°veis para passar pelo compilador.
         LocalDate dataInicio = LocalDate.now();
         LocalDate dataFim = LocalDate.now();
 
@@ -150,7 +150,7 @@ public class Swing implements ActionListener, Ui
                 dias = Integer.parseInt(JOptionPane.showInputDialog(null, "Quantos dias deseja buscar?"));
                 erro = false;
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Digite um n˙mero v·lido.", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Digite um n√∫mero v√°lido.", "Erro", JOptionPane.ERROR_MESSAGE);
                 erro = true;
             }
         } while (erro);
@@ -172,7 +172,7 @@ public class Swing implements ActionListener, Ui
                 id = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o ID do compromisso a remover:"));
                 erro = false;
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Digite um n˙mero v·lido.", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Digite um n√∫mero v√°lido.", "Erro", JOptionPane.ERROR_MESSAGE);
                 erro = true;
             }
         } while (erro);
@@ -187,9 +187,9 @@ public class Swing implements ActionListener, Ui
         botoes.add(new JButton("Remover"));
         botoes.add(new JButton("Listar Todos"));
         botoes.add(new JButton("Listar por Assunto"));
-        botoes.add(new JButton("Listar por PerÌodo"));
+        botoes.add(new JButton("Listar por Per√≠odo"));
         botoes.add(new JButton("Listar de Hoje"));
-        botoes.add(new JButton("Listar PrÛximos"));
+        botoes.add(new JButton("Listar Pr√≥ximos"));
         botoes.add(new JButton("Sair"));
 
         return botoes;
@@ -200,7 +200,7 @@ public class Swing implements ActionListener, Ui
         JDialog listagem = new JDialog();
         listagem.setTitle("Compromissos");
 
-        Object[] colunas = {"ID", "TÌtulo", "DescriÁ„o", "Data e Hora", "Assunto"};
+        Object[] colunas = {"ID", "T√≠tulo", "Descri√ß√£o", "Data e Hora", "Assunto"};
         Object[][] dados = new Object[compromissos.size()][5];
         int i = 0;
 
